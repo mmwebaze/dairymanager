@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Diary Manager</string>
+    <!-- Added by Michael strings related to login-->
+    <string name="login">Login</string>
+    <string name="enter_username">Enter username</string>
+    <string name="show">Show</string>
+    <string name="hide">Hide</string>
+    <string name="password_hint">Enter password</string>
+    <string name="reset">Reset</string>
+    <string name="search">search</string>
+    <string name="help">help</string>
+    <string name="log_out">Log out</string>
+    <!-- Data collection activity -->
+    <string name="radio_morning">Morning</string>
+    <string name="radio_afternoon">Afternoon</string>
+    <string name="btn_collection_save">Save</string>
+
+    <!--Search activity -->
+    <string name="select_date">Date and search</string>
+    <string name="searh_hint">Cow tag or name</string>
+</resources>
