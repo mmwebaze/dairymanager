@@ -4,6 +4,8 @@
           android:title="@string/help" />
     <item android:id="@+id/search"
           android:title="@string/search"/>
+    <item android:id="@+id/cow_management"
+          android:title="@string/cow_management"/>
     <item android:id="@+id/logout"
           android:title="@string/log_out" />
 </menu>

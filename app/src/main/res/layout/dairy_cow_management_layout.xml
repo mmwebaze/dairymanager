@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <EditText android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:hint="@string/tag_id"
+              android:id="@+id/add_tag_id" android:inputType="number" android:layout_centerHorizontal="true"
+              android:layout_alignParentTop="true" android:layout_marginTop="24dp"/>
+    <EditText android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:hint="@string/cow_name"
+              android:id="@+id/name_of_cow" android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
+              android:layout_marginTop="116dp"/>
+    <CheckBox
+            android:text="@string/is_milked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true" android:id="@+id/cow_milked" android:layout_marginTop="186dp"
+            android:checked="true"/>
+    <Button
+            android:text="@string/add_cow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:layout_centerHorizontal="true"
+            android:onClick="addCow"
+            android:layout_alignParentBottom="true" android:id="@+id/add_cow" android:layout_marginBottom="192dp"/>
+
+</RelativeLayout>

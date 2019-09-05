@@ -41,6 +41,7 @@ class MainActivity : AppCompatActivity() {
             passWd.setText("")
         }
     }
+
     fun login(view: View) {
         val username = findViewById<EditText>(R.id.usernameEditText)
         val password = findViewById<EditText>(R.id.passwordEditText)

@@ -7,9 +7,7 @@
     <string name="hide">Hide</string>
     <string name="password_hint">Enter password</string>
     <string name="reset">Reset</string>
-    <string name="search">search</string>
-    <string name="help">help</string>
-    <string name="log_out">Log out</string>
+
     <!-- Data collection activity -->
     <string name="radio_morning">Morning</string>
     <string name="radio_afternoon">Afternoon</string>
@@ -18,4 +16,17 @@
     <!--Search activity -->
     <string name="select_date">Date and search</string>
     <string name="searh_hint">Cow tag or name</string>
+
+    <!--Cow Management -->
+    <string name="tag_id">Cow tag</string>
+    <string name="cow_name">Cow name if any</string>
+    <string name="is_milked">Is milked?</string>
+    <string name="add_cow">Add cow</string>
+    <string name="title_activity_dairy_cow_management">DairyCowManagementActivity</string>
+
+    <!--Main Menu -->
+    <string name="search">search</string>
+    <string name="help">help</string>
+    <string name="log_out">Log out</string>
+    <string name="cow_management">Dairy Cow Management</string>
 </resources>

@@ -26,6 +26,9 @@
         <activity android:name="dev.mwebaze.dairymanager.DataCollectionActivity"/>
         <activity android:name="dev.mwebaze.dairymanager.SearchActivity">
         </activity>
+        <activity
+                android:name="dev.mwebaze.dairymanager.DairyCowManagementActivity">
+        </activity>
     </application>
 
 </manifest>

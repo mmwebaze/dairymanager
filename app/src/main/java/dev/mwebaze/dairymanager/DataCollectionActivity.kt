@@ -9,10 +9,13 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
+import dev.mwebaze.dairymanager.database.DairyDatabase
 import dev.mwebaze.dairymanager.model.DairyCow
-import dev.mwebaze.dairymanager.service.DataManager
-import dev.mwebaze.dairymanager.service.DataManagerInterface
 import dev.mwebaze.diarymanager.R
+import io.reactivex.Single
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.schedulers.Schedulers
 
 
 class DataCollectionActivity : AppCompatActivity() {
@@ -21,18 +24,37 @@ class DataCollectionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_data_collection)
         val cowSpinner: Spinner = findViewById<Spinner>(R.id.spinner_cows)
 
-        val dataManager : DataManagerInterface =
-            DataManager()
-        val milkingAnimals = dataManager.getMilkingAnimals()
+        Single.fromCallable(){
+            val db = DairyDatabase(this)
+            db.DiaryCowDao().getAll() ?: ArrayList<DairyCow>()
 
-        val spinnerArrayAdapter = ArrayAdapter(this, R.layout.spinner_item, milkingAnimals)
-        cowSpinner.setAdapter(spinnerArrayAdapter);
+        }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribeBy (
+                onSuccess = {
+                   cows ->
+                    val spinnerArrayAdapter = ArrayAdapter(this, R.layout.spinner_item, cows)
+                    cowSpinner.setAdapter(spinnerArrayAdapter);
 
+                },
+                onError = {
+                    error -> Log.e("KITTS", "Couldn't read cow list from database", error)
+                }
+            )
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.main_menu, menu)
         return true
+    }
+    override fun onRestart() {
+        super.onRestart()
+        val dataCollectionIntent = Intent(this, DataCollectionActivity::class.java)
+        finish()
+        overridePendingTransition(0,0)
+        startActivity(dataCollectionIntent)
+        overridePendingTransition(0, 0)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
@@ -52,12 +74,16 @@ class DataCollectionActivity : AppCompatActivity() {
                 Toast.makeText(this, "HELP", Toast.LENGTH_SHORT).show()
                 true
             }
+            R.id.cow_management -> {
+                val cowManagementIntent = Intent(this, DairyCowManagementActivity::class.java)
+                startActivity(cowManagementIntent)
+                true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
     fun save(view: View){
         val cowSpinner: Spinner = findViewById<Spinner>(R.id.spinner_cows)
-        //val milkedCow : DiaryCow
         val (tagId, name) = cowSpinner.selectedItem as DairyCow
 
         val periodCollectionGroup: RadioGroup =  findViewById<RadioGroup>(R.id.periodCollection);

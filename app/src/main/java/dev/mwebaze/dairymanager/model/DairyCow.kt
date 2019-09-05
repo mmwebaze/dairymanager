@@ -12,6 +12,6 @@ data class DairyCow (@ColumnInfo(name = "tag_id") var tagId: Int, @ColumnInfo(na
 
     override fun toString(): String {
 
-        return this.name;
+        return this.tagId.toString();
     }
 }
