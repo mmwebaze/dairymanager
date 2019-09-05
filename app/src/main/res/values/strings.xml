@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Diary Manager</string>
+    <string name="app_name">Dairy Manager</string>
     <!-- Added by Michael strings related to login-->
     <string name="login">Login</string>
     <string name="enter_username">Enter username</string>

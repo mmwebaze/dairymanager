@@ -1,4 +1,4 @@
-package dev.mwebaze.diarymanager
+package dev.mwebaze.dairymanager
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,10 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.widget.*
-import dev.mwebaze.diarymanager.model.DiaryCow
-import dev.mwebaze.diarymanager.service.DataManager
-import dev.mwebaze.diarymanager.service.DataManagerInterface
+import dev.mwebaze.dairymanager.model.DairyCow
+import dev.mwebaze.dairymanager.service.DataManager
+import dev.mwebaze.dairymanager.service.DataManagerInterface
+import dev.mwebaze.diarymanager.R
 
 
 class DataCollectionActivity : AppCompatActivity() {
@@ -20,7 +21,8 @@ class DataCollectionActivity : AppCompatActivity() {
         setContentView(R.layout.activity_data_collection)
         val cowSpinner: Spinner = findViewById<Spinner>(R.id.spinner_cows)
 
-        val dataManager : DataManagerInterface = DataManager()
+        val dataManager : DataManagerInterface =
+            DataManager()
         val milkingAnimals = dataManager.getMilkingAnimals()
 
         val spinnerArrayAdapter = ArrayAdapter(this, R.layout.spinner_item, milkingAnimals)
@@ -56,7 +58,7 @@ class DataCollectionActivity : AppCompatActivity() {
     fun save(view: View){
         val cowSpinner: Spinner = findViewById<Spinner>(R.id.spinner_cows)
         //val milkedCow : DiaryCow
-        val (tagId, name) = cowSpinner.selectedItem as DiaryCow
+        val (tagId, name) = cowSpinner.selectedItem as DairyCow
 
         val periodCollectionGroup: RadioGroup =  findViewById<RadioGroup>(R.id.periodCollection);
         val selectedId = periodCollectionGroup.checkedRadioButtonId;

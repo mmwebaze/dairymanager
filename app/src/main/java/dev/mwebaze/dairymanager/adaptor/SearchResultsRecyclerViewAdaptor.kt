@@ -1,4 +1,4 @@
-package dev.mwebaze.diarymanager.adaptor
+package dev.mwebaze.dairymanager.adaptor
 
 import android.content.Context
 import android.support.v7.widget.RecyclerView

@@ -6,7 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:gravity="center"
-        tools:context=".MainActivity" tools:layout_editor_absoluteY="81dp">
+        tools:context="dev.mwebaze.dairymanager.MainActivity" tools:layout_editor_absoluteY="81dp">
 
     <include layout="@layout/password_linear_layout"/>
 

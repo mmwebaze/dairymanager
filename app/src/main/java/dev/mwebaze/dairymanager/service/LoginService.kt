@@ -1,4 +1,4 @@
-package dev.mwebaze.diarymanager.service
+package dev.mwebaze.dairymanager.service
 
 class LoginService : LoginServiceInterface {
 

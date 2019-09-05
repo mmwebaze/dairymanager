@@ -1,4 +1,4 @@
-package dev.mwebaze.diarymanager
+package dev.mwebaze.dairymanager
 
 import android.app.DatePickerDialog
 import android.support.v7.app.AppCompatActivity
@@ -9,8 +9,9 @@ import android.support.v7.widget.RecyclerView
 import android.widget.DatePicker
 import android.widget.TextView
 import android.widget.Toast
-import dev.mwebaze.diarymanager.adaptor.SearchResultsRecyclerViewAdaptor
-import dev.mwebaze.diarymanager.service.DataManager
+import dev.mwebaze.dairymanager.adaptor.SearchResultsRecyclerViewAdaptor
+import dev.mwebaze.dairymanager.service.DataManager
+import dev.mwebaze.diarymanager.R
 import kotlinx.android.synthetic.main.activity_search.*
 import kotlinx.android.synthetic.main.search_linear_layout.*
 import java.util.*
@@ -48,7 +49,8 @@ class SearchActivity : AppCompatActivity() {
                 }
 
                 val recyclerView = findViewById<RecyclerView>(R.id.search_results_recyclerview)
-                recyclerView.adapter = SearchResultsRecyclerViewAdaptor(this, tags, names, amountMilk)
+                recyclerView.adapter =
+                    SearchResultsRecyclerViewAdaptor(this, tags, names, amountMilk)
                 recyclerView.layoutManager = LinearLayoutManager(this)
                 recyclerView.addItemDecoration(DividerItemDecoration(this, DividerItemDecoration.VERTICAL))
             }, year, month, day)
