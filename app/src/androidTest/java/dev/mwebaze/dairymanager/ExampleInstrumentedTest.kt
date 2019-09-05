@@ -1,4 +1,4 @@
-package dev.mwebaze.diarymanager
+package dev.mwebaze.dairymanager
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
