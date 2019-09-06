@@ -5,10 +5,12 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import android.widget.TextView
 import dev.mwebaze.diarymanager.R
 
+/**
+ * @author Michael Mwebaze
+ */
 class SearchResultsRecyclerViewAdaptor(val context: Context, val cowTag: ArrayList<Int>, val cowName: ArrayList<String>, val milkAmount: ArrayList<Double>)
     : RecyclerView.Adapter<SearchResultsRecyclerViewAdaptor.ViewHolder>() {
 
@@ -30,7 +32,7 @@ class SearchResultsRecyclerViewAdaptor(val context: Context, val cowTag: ArrayLi
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val cowTag: TextView = itemView.findViewById(R.id.cow_tag)
-        var cowName: TextView = itemView.findViewById(R.id.cow_name)
-        var milkAmount: TextView = itemView.findViewById(R.id.milk_amount)
+        val cowName: TextView = itemView.findViewById(R.id.cow_name)
+        val milkAmount: TextView = itemView.findViewById(R.id.milk_amount)
     }
 }

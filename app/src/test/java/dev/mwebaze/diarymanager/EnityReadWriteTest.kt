@@ -2,8 +2,6 @@ package dev.mwebaze.diarymanager
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4
-import android.util.Log
-
 import androidx.room.Room
 import dev.mwebaze.dairymanager.dao.DairyCowDao
 import dev.mwebaze.dairymanager.database.DairyDatabase
@@ -16,6 +14,9 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import java.io.IOException
 
+/**
+ * @author Michael Mwebaze
+ */
 @RunWith(AndroidJUnit4::class)
 class EnityReadWriteTest {
 

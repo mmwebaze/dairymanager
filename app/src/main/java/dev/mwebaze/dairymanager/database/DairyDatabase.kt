@@ -7,6 +7,9 @@ import androidx.room.RoomDatabase
 import dev.mwebaze.dairymanager.dao.DairyCowDao
 import dev.mwebaze.dairymanager.model.DairyCow
 
+/**
+ * @author Michael Mwebaze
+ */
 @Database(entities = [DairyCow::class], version = 1)
 abstract class DairyDatabase : RoomDatabase(){
     abstract fun DiaryCowDao(): DairyCowDao

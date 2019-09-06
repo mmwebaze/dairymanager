@@ -5,6 +5,9 @@ import androidx.room.Insert
 import androidx.room.Query
 import dev.mwebaze.dairymanager.model.DairyCow
 
+/**
+ * @author Michael Mwebaze
+ */
 @Dao
 interface DairyCowDao {
 

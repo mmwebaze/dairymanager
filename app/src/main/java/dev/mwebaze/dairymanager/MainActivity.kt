@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.util.Log
 import android.view.View
 import android.widget.EditText
 import dev.mwebaze.dairymanager.database.DairyDatabase
@@ -15,6 +14,9 @@ import dev.mwebaze.diarymanager.R
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.password_linear_layout.*
 
+/**
+ * @author Michael Mwebaze
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

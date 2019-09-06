@@ -4,6 +4,9 @@ import dev.mwebaze.dairymanager.model.DairyCow
 import java.util.*
 import kotlin.collections.ArrayList
 
+/**
+ * @author Michael Mwebaze
+ */
 class DataManager : DataManagerInterface {
     override fun getMilkingAnimals(): ArrayList<DairyCow> {
 

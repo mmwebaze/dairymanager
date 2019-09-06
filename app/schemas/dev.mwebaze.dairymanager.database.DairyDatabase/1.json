@@ -2,7 +2,7 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "2f37c0f122c2cac8eaa9cbef078984ac",
+    "identityHash": "bbd179046cf1ecf98457503b863a1fdc",
     "entities": [
       {
         "tableName": "dairy_cows",
@@ -39,14 +39,23 @@
           ],
           "autoGenerate": true
         },
-        "indices": [],
+        "indices": [
+          {
+            "name": "index_dairy_cows_tag_id",
+            "unique": true,
+            "columnNames": [
+              "tag_id"
+            ],
+            "createSql": "CREATE UNIQUE INDEX IF NOT EXISTS `index_dairy_cows_tag_id` ON `${TABLE_NAME}` (`tag_id`)"
+          }
+        ],
         "foreignKeys": []
       }
     ],
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '2f37c0f122c2cac8eaa9cbef078984ac')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bbd179046cf1ecf98457503b863a1fdc')"
     ]
   }
 }
