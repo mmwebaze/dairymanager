@@ -11,6 +11,7 @@ import dev.mwebaze.dairymanager.model.DairyCow
 import dev.mwebaze.diarymanager.R
 import io.reactivex.Single
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.Disposable
 import io.reactivex.rxkotlin.subscribeBy
 import io.reactivex.schedulers.Schedulers
 
@@ -28,7 +29,7 @@ class DairyCowManagementActivity : AppCompatActivity() {
         val cowName = findViewById<EditText>(R.id.name_of_cow)
         val isMilked = findViewById<CheckBox>(R.id.cow_milked)
 
-        Single.fromCallable() {
+        val dis: Disposable = Single.fromCallable() {
             val db = DairyDatabase(this)
             db.DiaryCowDao().insert(DairyCow(cowTag.text.toString().toInt(), cowName.text.toString(), isMilked.isChecked))
         }
@@ -39,7 +40,7 @@ class DairyCowManagementActivity : AppCompatActivity() {
                     Toast.makeText(this, "COW ADDED: "+cowTag.text+", "+cowName.text+", "+isMilked.isChecked, Toast.LENGTH_SHORT).show()
                 },
                 onError = {
-                    Toast.makeText(this, it.localizedMessage, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, cowTag.text.toString()+" NOT AVAILABLE", Toast.LENGTH_LONG).show()
                 }
             )
     }
